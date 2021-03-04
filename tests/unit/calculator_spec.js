@@ -39,7 +39,7 @@ describe('calculator', function () {
       assert.strictEqual(calculator.runningTotal, 3);
     })
 
-    
+
       // calculator.numberClick() - concatenate multiple number button clicks
   it('it can concatenate multiple number button clicks', function () {
     calculator.numberClick(3);
@@ -47,4 +47,21 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 32);
 
   })
+
+    // calculator.operatorClick() - chain multiple operations together
+    it('it can chain multiple operations', function () {
+      calculator.numberClick(3);
+      calculator.operatorClick("+");
+      calculator.operatorClick("+");
+      calculator.operatorClick("*");
+      calculator.operatorClick("=");
+      assert.strictEqual(calculator.runningTotal, 144)
+      calculator.operatorClick("/");
+      calculator.operatorClick("=");
+      assert.strictEqual(calculator.runningTotal, 1)
+    })
+
+
+
+
 });
