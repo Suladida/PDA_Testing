@@ -18,4 +18,10 @@ describe('calculator', function () {
       assert.strictEqual(calculator.runningTotal, 5);
     })
 
+      // calculator.subtract() subtract 4 from 7 and get 3
+  it('it can subtract 4 from 7 and get 3', function () {
+    calculator.previousTotal = 7;
+    calculator.subtract(4);
+    assert.strictEqual(calculator.runningTotal, 3);
+  }) 
 });
