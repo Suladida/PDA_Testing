@@ -25,4 +25,14 @@ describe('calculator functionality', function() {
       expect(running_total.getAttribute('value')).to.eventually.equal('137')
     })
 
+    // It should update the display with the result of the operation button when they're clicked
+    it('should update the display with the result of the operation when operation buttons are clicked', function(){
+      running_total = element(by.css('#running_total'))
+      element(by.css('#number1')).click();
+      element(by.css('#operator_add')).click();
+      element(by.css('#number7')).click();
+      element(by.css('#operator_equals')).click();
+      expect(running_total.getAttribute('value')).to.eventually.equal('8')
+    })
+
 });
