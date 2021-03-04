@@ -38,4 +38,13 @@ describe('calculator', function () {
       calculator.divide(7);
       assert.strictEqual(calculator.runningTotal, 3);
     })
+
+    
+      // calculator.numberClick() - concatenate multiple number button clicks
+  it('it can concatenate multiple number button clicks', function () {
+    calculator.numberClick(3);
+    calculator.numberClick(2);
+    assert.strictEqual(calculator.runningTotal, 32);
+
+  })
 });
