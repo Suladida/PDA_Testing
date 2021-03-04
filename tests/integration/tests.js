@@ -35,4 +35,15 @@ describe('calculator functionality', function() {
       expect(running_total.getAttribute('value')).to.eventually.equal('8')
     })
 
+    // Can chain multiple operations together
+  it('should be able to chain multiple operations together', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number3')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('36')
+  })
+
+
 });
