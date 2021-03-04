@@ -24,4 +24,18 @@ describe('calculator', function () {
     calculator.subtract(4);
     assert.strictEqual(calculator.runningTotal, 3);
   }) 
+
+    // calculator.multiply() - multiply 3 by 5 and get 15
+    it('it can multiply 3 by 5 and get 15', function () {
+      calculator.previousTotal = 5;
+      calculator.multiply(3);
+      assert.strictEqual(calculator.runningTotal, 15);
+    })
+  
+    // calculator.divide() - divide 21 by 7 and get 3
+    it('it can divide 21 by 7 and get 3', function () {
+      calculator.previousTotal = 21;
+      calculator.divide(7);
+      assert.strictEqual(calculator.runningTotal, 3);
+    })
 });
