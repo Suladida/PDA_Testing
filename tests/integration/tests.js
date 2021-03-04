@@ -16,4 +16,13 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   })
 
+    // It should update the display of the running total
+    it('should update the display of the running total when number buttons are clicked', function(){
+      running_total = element(by.css('#running_total'))
+      element(by.css('#number1')).click();
+      element(by.css('#number3')).click();
+      element(by.css('#number7')).click();
+      expect(running_total.getAttribute('value')).to.eventually.equal('137')
+    })
+
 });
